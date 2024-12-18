@@ -5,7 +5,7 @@ from cliente_dao import ClienteDAO
 
 app = Flask(__name__)
 
-titulo_app = 'Zona Fit (GYM) Proxima Estación'
+titulo_app = 'Zona Fit (GYM) Proxima Estación-'
 
 
 @app.route('/') #url: http://localhost:5000/
