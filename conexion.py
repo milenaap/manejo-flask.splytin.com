@@ -1,6 +1,8 @@
 from mysql.connector import pooling
 from mysql.connector import Error
 
+
+
 class Conexion:
     DATABASE = 'zona_fit_db'
     USERNAME = 'root'
