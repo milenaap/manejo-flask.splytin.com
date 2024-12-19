@@ -7,7 +7,7 @@ from cliente_dao import ClienteDAO
 
 
 
-titulo_app = 'Zona Fit (GYM) Test'
+titulo_app = 'Zona Fit (GYM) Nuevo'
 
 
 def create_app():
