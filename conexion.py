@@ -5,8 +5,10 @@ from mysql.connector import Error
 
 class Conexion:
     DATABASE = 'zona_fit_db'
-    USERNAME = 'root'
-    PASSWORD = '123456'
+    #USERNAME = 'root'
+    # PASSWORD = '123456'
+    USERNAME = 'zona_fit_db'
+    PASSWORD = 'Al6mr69!M'
     DB_PORT = '3306'
     HOST = 'localhost'
     POOL_SIZE = 5
