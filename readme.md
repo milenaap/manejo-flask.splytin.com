@@ -1,7 +1,10 @@
 #Proyecto Prueba Python Plesk
 
-### Install Local
 
+
+
+
+### Install Local & Plesk
 
 ```sh
 
@@ -14,13 +17,12 @@
 
 
 // Instala Flask:
-- pip install Flask
-- pip install gunicorn
-- pip list  
+- pip install Flask         // Flask
+- pip install gunicorn      // Gunicorn
+- pip list                  // Listar pip instalados
 
 // Si tiene, Instala los requirimientos:
 pip install -r requirements.txt
-
 
 
 
@@ -40,8 +42,6 @@ pip install -r requirements.txt
 // Para probar el servidor
 source venv/bin/activate 
 gunicorn -w 4 -b 127.0.0.1:8001 --reload app:app
-
-
 
 
 
