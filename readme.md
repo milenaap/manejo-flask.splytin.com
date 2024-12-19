@@ -10,19 +10,20 @@
 
 // Entorno virtual (https://flask.palletsprojects.com/en/3.0.x/installation/)
 - python3 -m venv venv
-- source venv/bin/activate     // MacOs
+- source venv/bin/activate        // MacOs
 - pip install --upgrade pip
-- deactivate                    // Deactivate
+- deactivate                      // Deactivate
 
 
 
 // Instala Flask:
-- pip install Flask         // Flask
-- pip install gunicorn      // Gunicorn
-- pip list                  // Listar pip instalados
+- pip install Flask               // Flask
+- pip install gunicorn            // Gunicorn
+- pip list                        // Listar pip instalados
 
-// Si tiene, Instala los requirimientos:
-pip install -r requirements.txt
+// Instala los requirimientos:
+pip freeze > requirements.txt     // Crear archivo requerimientos
+pip install -r requirements.txt   // Instalar requerimientos 
 
 
 
