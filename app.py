@@ -44,7 +44,7 @@ def create_app():
     @app.route('/test')
     def test():
         message_channel.send("Este es un mensaje de prueba", "Prueba")
-        return jsonify({"mensaje": "Esto nuna se ejecutará"})
+        return jsonify({"mensaje": "Se envió el mensaje"})
 
     @app.errorhandler(Exception)
     def handle_exception(e):
