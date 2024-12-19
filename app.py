@@ -45,7 +45,7 @@ def create_app():
 
     @app.route('/test')
     def test():
-        message_channel.send("Este es un mensaje de prueba", "Prueba")
+        message_channel.send("Este es un mensaje de prueba", "Test")
         return jsonify({"mensaje": "Se envió el mensaje"})
 
 
