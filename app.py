@@ -36,15 +36,18 @@ def create_app():
         clientes_db = ClienteDAO.seleccionar()
         return render_template('index.html', titulo=titulo_app, clientes=clientes_db)
 
+
     @app.route('/error')
     def error():
         v = 1 / 0
         return jsonify({"mensaje": "Esto nuna se ejecutará"})
 
+
     @app.route('/test')
     def test():
         message_channel.send("Este es un mensaje de prueba", "Prueba")
         return jsonify({"mensaje": "Se envió el mensaje"})
+
 
     @app.errorhandler(Exception)
     def handle_exception(e):
