@@ -68,12 +68,16 @@ WantedBy=multi-user.target
 
 -----------------
 
-
+// En el terminal:
 sudo systemctl daemon-reload
 sudo systemctl start gunicorn-manejo-flask.splytin.com
 sudo systemctl enable gunicorn-manejo-flask.splytin.com
+
+// Para Gestión y pruebas del servidor Gunicorn:
+sudo systemctl restart gunicorn-manejo-flask.splytin.com
 sudo systemctl status gunicorn-manejo-flask.splytin.com
 
+sudo journalctl -u gunicorn-manejo-flask.splytin.com
 
 
 ```
