@@ -2,14 +2,12 @@ from flask import Flask, render_template, jsonify
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from cliente import Cliente
 from cliente_dao import ClienteDAO
 
 
 
 titulo_app = 'Zona Fit (GYM) Nuevo'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
-
 
 
 def create_app():

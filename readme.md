@@ -73,11 +73,18 @@ sudo systemctl daemon-reload
 sudo systemctl start gunicorn-manejo-flask.splytin.com
 sudo systemctl enable gunicorn-manejo-flask.splytin.com
 
-// Para Gestión y pruebas del servidor Gunicorn:
+
+// Para Gestión, errores y pruebas del servidor Gunicorn:
 sudo systemctl restart gunicorn-manejo-flask.splytin.com
 sudo systemctl status gunicorn-manejo-flask.splytin.com
 
 sudo journalctl -u gunicorn-manejo-flask.splytin.com
+
+
+
+// Permisos:
+sudo chown -R www-data:www-data /var/www/vhosts/splytin.com/manejo-flask.splytin.com
+sudo chmod -R 775 /var/www/vhosts/splytin.com/manejo-flask.splytin.com
 
 
 ```
