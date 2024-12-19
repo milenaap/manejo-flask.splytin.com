@@ -112,3 +112,6 @@ dmypy.json
 
 # Local VS Code settings
 .vscode/
+
+logs
+/logs
