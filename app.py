@@ -3,8 +3,7 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 from cliente_dao import ClienteDAO
-
-
+from src.utils import message_channel
 
 titulo_app = 'Zona Fit (GYM) Dama'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
@@ -40,6 +39,11 @@ def create_app():
     @app.route('/error')
     def error():
         v = 1 / 0
+        return jsonify({"mensaje": "Esto nuna se ejecutará"})
+
+    @app.route('/test')
+    def error():
+        message_channel.send("Este es un mensaje de prueba", "Prueba")
         return jsonify({"mensaje": "Esto nuna se ejecutará"})
 
     @app.errorhandler(Exception)
