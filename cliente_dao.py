@@ -2,6 +2,7 @@ from conexion import Conexion
 from cliente import Cliente
 
 
+
 class ClienteDAO:
     SELECCIONAR = 'SELECT * FROM clientes ORDER BY id'
     INSERTAR = 'INSERT INTO clientes(nombre, apellido, membresia) VALUES(%s, %s, %s)'
