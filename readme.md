@@ -11,6 +11,7 @@
 // Entorno virtual (https://flask.palletsprojects.com/en/3.0.x/installation/)
 - python3 -m venv venv
 - source venv/bin/activate        // MacOs
+- .\.venv\Scripts\activate        // Windows
 - pip install --upgrade pip
 - deactivate                      // Deactivate
 
