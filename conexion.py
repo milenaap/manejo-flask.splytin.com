@@ -1,8 +1,10 @@
 from mysql.connector import pooling
 from mysql.connector import Error
 import os
+from dotenv import load_dotenv
 
 
+load_dotenv()  # Cargar las variables del .env
 
 class Conexion:
     DATABASE = 'zona_fit_db'
@@ -16,6 +18,11 @@ class Conexion:
 
     @classmethod
     def obtener_pool(cls):
+
+        if not cls.USERNAME or not cls.PASSWORD:
+            raise EnvironmentError("Faltan las variables de entorno DB_USERNAME o DB_PASSWORD.")
+
+
         if cls.pool is None: # Se crea el objeto pool
             try:
                 cls.pool = pooling.MySQLConnectionPool(
@@ -25,7 +32,9 @@ class Conexion:
                     port = cls.DB_PORT,
                     database = cls.DATABASE,
                     user = cls.USERNAME,
-                    password = cls.PASSWORD
+                    password = cls.PASSWORD,
+                    charset="utf8mb4",
+                    collation="utf8mb4_general_ci"
                 )
                 return cls.pool
             except Error as e:

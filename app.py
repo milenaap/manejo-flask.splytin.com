@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, send_from_directory
 import os
 import logging
 from logging.handlers import RotatingFileHandler
@@ -11,9 +11,9 @@ LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.lo
 
 
 def create_app():
+
     # Carga las variables desde el archivo .env
     load_dotenv()
-
 
     app = Flask(__name__)
 
@@ -52,6 +52,14 @@ def create_app():
     def test():
         message_channel.send("Este es un mensaje de prueba", "Test")
         return jsonify({"mensaje": "Se envió el mensaje"})
+
+
+
+
+    @app.route('/favicon.ico')
+    def favicon():
+        return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico',
+                                   mimetype='image/vnd.microsoft.icon')
 
 
     @app.errorhandler(Exception)
