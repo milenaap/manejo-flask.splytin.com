@@ -6,7 +6,7 @@ from cliente_dao import ClienteDAO
 
 
 
-titulo_app = 'Zona Fit (GYM) Nuevo'
+titulo_app = 'Zona Fit (GYM) Dama'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
 
 
