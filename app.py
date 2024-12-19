@@ -4,12 +4,17 @@ import logging
 from logging.handlers import RotatingFileHandler
 from cliente_dao import ClienteDAO
 from src.utils import message_channel
+from dotenv import load_dotenv
 
 titulo_app = 'Zona Fit (GYM) Dama'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
 
 
 def create_app():
+    # Carga las variables desde el archivo .env
+    load_dotenv()
+
+
     app = Flask(__name__)
 
     # Crear la carpeta "logs" si no existe

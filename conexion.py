@@ -1,14 +1,13 @@
 from mysql.connector import pooling
 from mysql.connector import Error
+import os
 
 
 
 class Conexion:
     DATABASE = 'zona_fit_db'
-    #USERNAME = 'root'
-    #PASSWORD = '123456'
-    USERNAME = 'zona_fit_db'
-    PASSWORD = 'Al6mr69!M'
+    USERNAME = os.getenv('DB_USERNAME')
+    PASSWORD = os.getenv('DB_PASSWORD')
     DB_PORT = '3306'
     HOST = 'localhost'
     POOL_SIZE = 5
