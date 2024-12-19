@@ -19,6 +19,7 @@
 // Instala Flask:
 - pip install Flask               // Flask
 - pip install gunicorn            // Gunicorn
+- pip install requests            // Gunicorn
 - pip list                        // Listar pip instalados
 
 // Instala los requirimientos:
