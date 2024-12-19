@@ -8,6 +8,8 @@ from cliente_dao import ClienteDAO
 
 
 titulo_app = 'Zona Fit (GYM) Nuevo'
+LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
+
 
 
 def create_app():
@@ -19,7 +21,7 @@ def create_app():
 
     # Configurar logging
     handler = RotatingFileHandler(
-        'logs/app.log', maxBytes=1000000, backupCount=5
+        LOG_PATH, maxBytes=1000000, backupCount=5
     )  # Archivo de log, 1 MB máx., 5 backups
     handler.setLevel(logging.ERROR)  # Registrar solo errores y mayores
     formatter = logging.Formatter(
