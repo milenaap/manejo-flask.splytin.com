@@ -2,12 +2,17 @@ from flask import Flask, render_template, jsonify, send_from_directory
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+
+from cliente import Cliente
 from cliente_dao import ClienteDAO
+from cliente_forma import ClienteForma
 from src.utils import message_channel
 from dotenv import load_dotenv
 
 titulo_app = 'Zona Fit (GYM) Dama 1'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
+
+
 
 
 def create_app():
@@ -39,7 +44,11 @@ def create_app():
     def inicio():
         app.logger.debug('Entramos al path de inicio /')
         clientes_db = ClienteDAO.seleccionar()
-        return render_template('index.html', titulo=titulo_app, clientes=clientes_db)
+        # Creamos un objeto de cliente vacio
+        cliente= Cliente()
+        cliente_forma= ClienteForma(obj=cliente)
+        return render_template('index.html', titulo=titulo_app, clientes=clientes_db,
+                               forma=cliente_forma)
 
 
     @app.route('/error')
@@ -72,6 +81,8 @@ def create_app():
 
 
 app = create_app()
+
+app.config['SECRET_KEY'] = 'llave secreta_123' # Llave secreta para proteger formularios
 
 if __name__ == '__main__':
 

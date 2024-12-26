@@ -9,20 +9,24 @@
 ```sh
 
 // Entorno virtual (https://flask.palletsprojects.com/en/3.0.x/installation/)
-- python3 -m venv venv            // MacOs
-- python3.exe -m venv venv        // Windows
-- source venv/bin/activate        // MacOs
-- .\.venv\Scripts\activate        // Windows
+- python3 -m venv venv                      // MacOs
+- source venv/bin/activate                  // MacOs
 - pip install --upgrade pip
-- deactivate                      // Deactivate
+
+- python3.exe -m venv venv                  // Windows
+- .\venv\bin\activate                       // Windows
+- python3.exe -m pip install --upgrade pip  // Windows
+- deactivate                                // Deactivate
 
 
 
-// Instala Flask:
+// Instalar librerias:
 - pip install Flask               // Flask
 - pip install gunicorn            // Gunicorn
 - pip install requests            // Gunicorn
 - pip list                        // Listar pip instalados
+- pip install flask-wtf           // Formularios 
+- pip install python-dotenv       // Variables de entorno
 
 // Instala los requirimientos:
 pip freeze > requirements.txt     // Crear archivo requerimientos
