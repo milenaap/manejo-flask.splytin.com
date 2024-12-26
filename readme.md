@@ -1,8 +1,4 @@
-#Proyecto Prueba Python Plesk
-
-
-
-
+# Proyecto Prueba Python Plesk
 
 ### Install Local & Plesk
 
