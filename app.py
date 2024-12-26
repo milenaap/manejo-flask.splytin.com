@@ -6,7 +6,7 @@ from cliente_dao import ClienteDAO
 from src.utils import message_channel
 from dotenv import load_dotenv
 
-titulo_app = 'Zona Fit (GYM) Dama'
+titulo_app = 'Zona Fit (GYM) Dama 1'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
 
 
