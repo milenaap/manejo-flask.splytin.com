@@ -58,4 +58,4 @@ if __name__ == '__main__':
     conexion1 = pool.get_connection()
     print(conexion1)
     Conexion.liberar_conexion(conexion1)
-    print(f'Se ha liberado el objeto conexion1')
+    print(f'Se ha liberado el objeto conexion1...')
