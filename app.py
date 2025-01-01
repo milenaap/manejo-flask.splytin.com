@@ -10,10 +10,8 @@ from cliente_forma import ClienteForma
 from src.utils import message_channel
 from dotenv import load_dotenv
 
-titulo_app = 'Zona Fit (GYM) Dama 1'
+titulo_app = 'Zona Fit (GYM) Dama'
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs/app.log')
-
-
 
 
 def create_app():
@@ -89,7 +87,7 @@ def create_app():
     @app.route('/error')
     def error():
         v = 1 / 0
-        return jsonify({"mensaje": "Esto nuna se ejecutará"})
+        return jsonify({"mensaje": "Esto nunca se ejecutará"})
 
 
     @app.route('/test')
